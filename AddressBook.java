@@ -7,7 +7,13 @@ import java.util.Scanner;
 public class AddressBook {
     public static void main(String[] args) {
         System.out.println("Welcome to the address book system");
+
         ArrayList<Contacts> array = new ArrayList<Contacts>();
+
+        /*
+         * The try statement allows us to define a block of code to be tested for errors
+         * while it is being executed
+         */
         try (Scanner sc = new Scanner(System.in)) {
             try (Scanner sc1 = new Scanner(System.in)) {
                 int choice;
@@ -84,6 +90,7 @@ public class AddressBook {
                                     found = true;
                                 }
                             }
+
                             System.out.println("_____________________________________");
 
                             if (!found) {
@@ -93,6 +100,7 @@ public class AddressBook {
                             }
                             System.out.println("_______________________________________");
                             break;
+
                         // To Delete Contact
                         case 4:
                             found = false;
@@ -100,13 +108,16 @@ public class AddressBook {
                             firstName1 = sc1.nextLine();
                             System.out.println("____________________________________");
                             iterator = array.iterator();
+
                             while (iterator.hasNext()) {
                                 contact = iterator.next();
+
                                 if (contact.getFirstName().equals(firstName1)) {
                                     iterator.remove();
                                     found = true;
                                 }
                             }
+
                             System.out.println("____________________________________");
                             if (!found) {
                                 System.out.println("Record not found");
